@@ -1,0 +1,16 @@
+Author: Aman Kanwar
+
+
+Use the following instructions for setting up the given AVR based controller support in the Microchip studio
+
+***Install the Arduino IDE, prior performing the below steps***
+
+As the AVR dude is required for the flashing of the given controller and one is already available with Arduino IDE
+
+In Microchip studio, Goto Tools->External Tools and provide the following information
+=============================================================================================================
+Title: <Your board Name>
+Command: C:\Program Files (x86)\Arduino\hardware\tools\avr\bin\avrdude.exe
+Arguments: -C"C:\Program Files (x86)\arduino\hardware\tools\avr\etc\avrdude.conf" -v -patmega328p -carduino -PCOM5 -b57600 -D -Uflash:w:"$(ProjectDir)Debug\$(TargetName).hex":i
+Select 'Use Output Window'
+=============================================================================================================
